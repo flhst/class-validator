@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2018",
     "lib": ["es2018"],
     "outDir": "build/node",
-    "rootDir": "./src",
-    "strict": true,
+    //    "rootDir": "./src",
+    "strict": false,
     "sourceMap": true,
     "inlineSources": true,
     "removeComments": false,
