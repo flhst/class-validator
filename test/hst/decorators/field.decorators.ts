@@ -1,5 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { type ApiPropertyOptions } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
 import {
   IsString,
   MinLength,
@@ -29,7 +30,7 @@ interface IStringFieldOptions extends IFieldOptions {
 export function StringField(
   options: Omit<ApiPropertyOptions, 'type'> & IStringFieldOptions = {},
 ): PropertyDecorator {
-  const decorators = [IsString({ each: options.each })];
+  const decorators = [Type(() => String), IsString({ each: options.each })];
 
   // if (options.nullable) {
   //   decorators.push(IsNullable({ each: options.each }));
