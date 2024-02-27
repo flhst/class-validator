@@ -11,5 +11,13 @@ validate(post).then(error => {
   }
 })
 
-const test: any[] = ['1'];
-console.log(test)
+const person = {
+  name: "John",
+  age: 30,
+  address: "123 Main St"
+};
+
+const propertyName = "age";
+const propertyValue = (person as any)[propertyName];
+
+console.log(propertyValue); // 输出: 30
